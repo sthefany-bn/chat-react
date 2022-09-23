@@ -15,7 +15,7 @@ export const colors = {
     primary: "#4B4DA1",
     secondary: "#30317C",
     link: "#2F96FA",
-    gray: "#E5E5E5",
+    gray: "#D8D8D8",
     white: "#ffffff",
     black: "#000000",
 }
