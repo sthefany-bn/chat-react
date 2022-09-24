@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { colors } from "styles/GlobalStyle";
-
 export const Cabecalho = styled.header`
 display: flex;
   justify-content: space-between;
@@ -33,6 +32,17 @@ display: flex;
           text-decoration: none;
           font-size: 1.2em;
           color: ${colors.white};
+        }
+        button {
+          display: flex;
+          gap: 0.5rem;
+          align-items: center;
+          text-decoration: none;
+          font-size: 1.2em;
+          color: ${colors.primary};
+          border: 0;
+          background-color: transparent;
+          cursor: pointer;
         }
       }
     }
