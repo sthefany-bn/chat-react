@@ -1,7 +1,7 @@
-import React from "react";
+import React, {HTMLProps} from "react";
 
 export interface ButtonProps {
-    bgColors?: 'default' | 'add' | 'edit' | 'remove'
+    bgColor?: 'default' | 'add' | 'edit' | 'remove'
 }
 
 export interface IButton extends HTMLProps<HTMLElement>, ButtonProps {
