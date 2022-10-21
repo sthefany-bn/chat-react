@@ -35,7 +35,6 @@ export const Section = styled.section`
         p{
             font-size: 0.8rem;
             margin-top: 1rem;
-            margin-left: 3rem;
             a{
                 text-decoration: none;
                 color : ${colors.link};
