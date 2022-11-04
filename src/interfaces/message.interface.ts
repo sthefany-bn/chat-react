@@ -4,3 +4,10 @@ export interface IMessageData {
     ano?: string
     message?: string
 }
+
+export interface IMessageForm {
+    id?: number
+    title?: string
+    message?: string
+    created_at?: string
+  }

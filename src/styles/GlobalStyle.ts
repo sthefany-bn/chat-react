@@ -17,7 +17,7 @@ export const colors = {
     secondary: "#30317C",
     third: "#4924A3",
     link: "#2F96FA",
-    gray: "#D8D8D8",
+    gray: "#D7D7D7",
     white: "#ffffff",
     black: "#000000",
     danger: "##BF3636",
