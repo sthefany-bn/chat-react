@@ -15,7 +15,6 @@ const Menu = () => {
       <picture>
         <Link to="/">
           <FcKey />
-          Secret chat
         </Link>
       </picture>
       <nav>
@@ -23,7 +22,9 @@ const Menu = () => {
           user ? (
             <ul>
               <li>
-
+                <Link to="/adm/message">Mensagem</Link>
+              </li>
+              <li>
                 <button onClick={logout}>{user.name} <GrLogout /></button>
               </li>
             </ul>
