@@ -82,7 +82,7 @@ const AdmMessage = () => {
                     <tr key={item.id}>
                       <td>{item.titulo}</td>
                       <td>{item.ano}</td>
-                      <td>{item.message}</td>
+                      <td>{item.mensagem}</td>
                       <td>
                         <ButtonComponent
                           type="button"

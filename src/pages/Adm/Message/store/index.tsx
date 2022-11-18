@@ -13,8 +13,9 @@ const MessageStore = () => {
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
   const [formData, setFormData] = useState<IMessageForm>({
-    title: '',
-    message: '',
+    titulo: '',
+    mensagem: '',
+    ano: '',
   })
   const { id } = useParams<{ id: string }>();
 
@@ -74,17 +75,24 @@ const MessageStore = () => {
                 <FcUndo /> Voltar
               </Link>
               <div>
-                <label htmlFor="title">Título: </label>
+                <label htmlFor="titulo">Título: </label>
                 <input type="text" id="title" placeholder="Escreva um título" required
-                  onChange={(e) => handleChange({ title: e.target.value })}
-                  value={formData?.title}
+                  onChange={(e) => handleChange({ titulo: e.target.value })}
+                  value={formData?.titulo}
+                />
+              </div>
+              <div>
+                <label htmlFor="Ano">Ano: </label>
+                <input type="text" id="date" placeholder="Escreva o ano de lancamento" required
+                  onChange={(e) => handleChange({ ano: e.target.value })}
+                  value={formData?.ano}
                 />
               </div>
               <div>
                 <label htmlFor="message">Mensagem: </label>
                 <textarea id="message" placeholder="Escreva uma mensagem" required
-                  onChange={(e) => handleChange({ message: e.target.value })}
-                  value={formData?.message}
+                  onChange={(e) => handleChange({ mensagem: e.target.value })}
+                  value={formData?.mensagem}
                 />
               </div>
               <ButtonComponent bgColor="add" type="submit">

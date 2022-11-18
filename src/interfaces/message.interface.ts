@@ -2,12 +2,13 @@ export interface IMessageData {
     id?: number
     titulo?: string
     ano?: string
-    message?: string
+    mensagem?: string
 }
 
 export interface IMessageForm {
     id?: number
-    title?: string
-    message?: string
+    titulo?: string
+    mensagem?: string
     created_at?: string
+    ano?: string
   }

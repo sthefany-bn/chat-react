@@ -15,6 +15,7 @@ const Menu = () => {
       <picture>
         <Link to="/">
           <FcKey />
+          Secret Chat
         </Link>
       </picture>
       <nav>
