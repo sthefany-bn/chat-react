@@ -1,21 +1,24 @@
 import { FormEvent, useEffect, useState } from "react";
 import * as S from "./styles";
 import { LoadingComponent, ButtonComponent } from "components";
-import { FcDatabase, FcUndo } from "react-icons/fc";
+import { FcUndo } from "react-icons/fc";
+import { IoSend } from "react-icons/io5";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { apiMessage } from "services/data";
+import { apiMessage, apiTopic } from "services/data";
 import { toast } from "react-toastify";
 import { AxiosError } from "axios";
 import { IMessageForm } from "interfaces/message.interface";
 import { IErrorResponse } from "interfaces/user.interface";
+import { ITopicData } from "interfaces/topic.interface";
 
 const MessageStore = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [, setTopics] = useState<ITopicData[]>()
   const navigate = useNavigate();
   const [formData, setFormData] = useState<IMessageForm>({
-    titulo: '',
-    mensagem: '',
-    ano: '',
+    title: '',
+    message: '',
+    topic: []
   })
   const { id } = useParams<{ id: string }>();
 
@@ -45,14 +48,22 @@ const MessageStore = () => {
     setFormData((state: IMessageForm) => ({ ...state, ...e }))
   }
 
-
   useEffect(() => {
+    const loadTopics = async () => {
+      try {
+        const response = await apiTopic.index()
+        setTopics(response.data)
+      } catch (error) {
+        console.log(error);
+      }
+    }
     if (Number(id) > 0) {
       const fetchData = async (id: number) => {
         try {
           const response = await apiMessage.show(id);
           setFormData({
             ...response.data,
+            topic: response.data.messageTopic?.map((i) => i.id)
           });
         } catch (error) {
           console.log(error);
@@ -60,6 +71,7 @@ const MessageStore = () => {
       };
       fetchData(Number(id));
     }
+    loadTopics()
     setIsLoading(false);
   }, [id]);
 
@@ -75,28 +87,21 @@ const MessageStore = () => {
                 <FcUndo /> Voltar
               </Link>
               <div>
-                <label htmlFor="titulo">Título: </label>
+                <label htmlFor="title">Título: </label>
                 <input type="text" id="title" placeholder="Escreva um título" required
-                  onChange={(e) => handleChange({ titulo: e.target.value })}
-                  value={formData?.titulo}
-                />
-              </div>
-              <div>
-                <label htmlFor="Ano">Ano: </label>
-                <input type="text" id="date" placeholder="Escreva o ano de lancamento" required
-                  onChange={(e) => handleChange({ ano: e.target.value })}
-                  value={formData?.ano}
+                  onChange={(e) => handleChange({ title: e.target.value })}
+                  value={formData?.title}
                 />
               </div>
               <div>
                 <label htmlFor="message">Mensagem: </label>
                 <textarea id="message" placeholder="Escreva uma mensagem" required
-                  onChange={(e) => handleChange({ mensagem: e.target.value })}
-                  value={formData?.mensagem}
+                  onChange={(e) => handleChange({ message: e.target.value })}
+                  value={formData?.message}
                 />
               </div>
               <ButtonComponent bgColor="add" type="submit">
-                Enviar <FcDatabase />
+                Enviar <IoSend />
               </ButtonComponent>
             </form>
           </S.Main>

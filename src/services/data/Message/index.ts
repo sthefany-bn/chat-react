@@ -3,19 +3,19 @@ import api from "services/api";
 
 class MessageData {
   index() {
-    return api.get<IMessageData[]>('/filmes')
+    return api.get<IMessageData[]>('/messages')
   }
   store(data: IMessageForm) {
-    return api.post(`/filmes`, data)
+    return api.post(`/messages`, data)
   }
   show(id: number) {
-    return api.get<IMessageData>(`/filmes/${id}`)
+    return api.get<IMessageData>(`/messages/${id}`)
   }
   update(id: number, data: IMessageForm) {
-    return api.put(`/filmes/${id}`, data)
+    return api.put(`/messages/${id}`, data)
   }
   destroy(id: number) {
-    return api.delete(`/filmes/${id}`)
+    return api.delete(`/messages/${id}`)
   }
 }
 

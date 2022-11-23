@@ -1,6 +1,14 @@
-export interface ICard{
-    dados:{
+export interface ICard {
+    dados: {
+      id?: number,
+      title?: string,
+      message?: string,
+      user?: {
+        name: string,
+      }
+      messageTopic?: {
         id: number,
-        img: string,
+        name: string
+      }[]
     }
-}
+  }

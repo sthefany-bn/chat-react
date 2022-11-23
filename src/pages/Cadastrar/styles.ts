@@ -15,8 +15,8 @@ export const Section = styled.section`
         svg {
             display: flex;
             margin: 0.4rem 8rem;
-            height: 5rem;
-            width: 5rem;
+            height: 5.5rem;
+            width: 5.5rem;
             color: ${colors.gray};
         }
         div {
@@ -32,14 +32,13 @@ export const Section = styled.section`
                 background-color: transparent;
             }
         }
-        p{
-            font-size: 0.8rem;
-            margin-top: 1rem;
-            a{
-                text-decoration: none;
-                color : ${colors.link};
-                font-weight: bold;
-            }
+        p {
+          margin-top: 1rem;
+          a {
+            text-decoration: none;
+            color: ${colors.link};
+            font-weight: bold;
+          }
         }
     }
 `

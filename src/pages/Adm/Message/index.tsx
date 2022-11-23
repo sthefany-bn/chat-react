@@ -1,11 +1,12 @@
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { ButtonComponent } from "components";
 import * as S from "./styles";
 import { apiMessage } from "services/data";
 import { IMessageData } from "interfaces/message.interface";
 import { LoadingComponent } from "components";
 import { FcAddDatabase } from "react-icons/fc";
-import { BsPencilSquare, BsTrash2 } from "react-icons/bs";
+import { HiPencilAlt } from "react-icons/hi";
+import { FiTrash2 } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import { confirmAlert } from "react-confirm-alert";
 import { toast } from "react-toastify";
@@ -69,8 +70,8 @@ const AdmMessage = () => {
             <table>
               <thead>
                 <tr>
-                  <th>Titulo</th>
-                  <th>Ano</th>
+                  <th>Nome</th>
+                  <th>Título</th>
                   <th>Mensagem</th>
                   <th>Editar</th>
                   <th>Remover</th>
@@ -80,16 +81,16 @@ const AdmMessage = () => {
                 {messages &&
                   messages.map((item) => (
                     <tr key={item.id}>
-                      <td>{item.titulo}</td>
-                      <td>{item.ano}</td>
-                      <td>{item.mensagem}</td>
+                      <td>{item.user?.name}</td>
+                      <td>{item.title}</td>
+                      <td>{item.message}</td>
                       <td>
                         <ButtonComponent
                           type="button"
                           bgColor="edit"
                           onClick={() => navigate(`/adm/message/${item.id}`)}
                         >
-                          <BsPencilSquare />
+                          <HiPencilAlt />
                         </ButtonComponent>
                       </td>
                       <td>
@@ -98,7 +99,7 @@ const AdmMessage = () => {
                           bgColor="remove"
                           onClick={() => item.id && handleDelete(item.id)}
                         >
-                          <BsTrash2 />
+                          <FiTrash2 />
                         </ButtonComponent>
                       </td>
                     </tr>

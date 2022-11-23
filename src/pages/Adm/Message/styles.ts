@@ -5,15 +5,16 @@ export const Main = styled.main`
   div {
     display: block;
     width: 3rem;
-    margin: 0.5rem 0;
+    margin: 1rem 0;
   }
   table {
-    margin-bottom: 1rem;
-    width: 100%;
+    margin-left: 1.8rem;
+    width: 95%;
     border-collapse: collapse;
     tr, td, th {
-      border: 1px solid ${colors.black};
+      border: 2px solid ${colors.black};
       padding: 0.5rem;
+      color: ${colors.white};
     }
   }
 `

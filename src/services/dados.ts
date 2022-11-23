@@ -1,40 +1,20 @@
 const dados = [
     {
-        id: 1,
-        img: require("assets/img/Group1.png")     
+      id: 1,
+      titulo: "Toy Story",
+      mensagem: "Algum comentario sobre o filme",
     },
     {
-        id: 2,
-        img: require("assets/img/Group2.png") 
+      id: 2,
+      titulo: "Toy Story 2",
+      mensagem: "Algum comentario sobre o filme",    
     },
     {
-        id: 3,
-        img: require("assets/img/Group3.png")
+      id: 3,
+      titulo: "Toy Story 3",
+      mensagem: "Algum comentario sobre o filme",    
     },
-    {
-        id: 4,
-        img: require("assets/img/Group4.png") 
-    },
-    {
-        id: 5,
-        img: require("assets/img/Group5.png") 
-    },
-    {
-        id: 6,
-        img: require("assets/img/Group6.png")
-    },
-    {
-        id: 7,
-        img: require("assets/img/Group7.png")
-    },
-    {
-        id: 8,
-        img: require("assets/img/Group8.png")
-    },
-    {
-        id: 9,
-        img: require("assets/img/Group9.png")
-    },
-]
-
-export default dados
+  ]
+  
+  export default dados
+  
